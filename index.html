@@ -295,6 +295,9 @@
       max-width: 100px;
       direction: rtl;
     }
+    label[for=drunklevel]{
+      font-size: 10px;
+    }
   </style>
 </head>
 
@@ -309,7 +312,7 @@
     <h1>Drunk text maker</h1>
     <button class="btn rounded width100">Animate</button>
     <div class="levels rounded width100">
-      <label for="drunklevel">Drunk level</label>
+      <label for="drunklevel">Drunkenness level</label>
       <input type="range" id="drunklevel" min="10" max="150" step="10" value="50">
     </div>
     <button class="btn export rounded width100">export</button>
