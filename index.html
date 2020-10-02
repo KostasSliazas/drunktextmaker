@@ -98,6 +98,7 @@
         transform: rotate(-10deg);
       }
     }
+
     .drunktext {
       animation-duration: .5s;
     }
@@ -404,7 +405,8 @@
       keyboard.style.display = "none";
 
       function textsdr(e) {
-        if (exportWrap.style.display === "block" && e.target.id !== "export-wrap") {
+        if (exportWrap.style.display === "block" && e.target.id !== "export-wrap" || keyboard.style.display ===
+          "grid") {
           exportWrap.style.display = "none";
         }
         if (e.target.classList.contains("export")) {
@@ -420,8 +422,7 @@
           typing(e.target.innerHTML);
         } else if (e.target.classList.contains("close")) {
           keyboard.style.display = "none";
-        } else
-          return;
+        } else return;
       }
 
       function loaddelete() {
@@ -438,7 +439,8 @@
       }
 
       function exportCSS() {
-        return '@keyframes rote{\r\n' +
+        return  '/*CSS*/\r\n' +
+          '@keyframes rote{\r\n' +
           'from{\r\n' +
           'transform:rotate(10deg);\r\n' +
           '}\r\n' +
@@ -478,7 +480,7 @@
 
       function exportHtml() {
         exportWrap.style.display = "block";
-        exportWrap.value = '<div class="drunktext drunked">' + drunktext.innerHTML + '</div>' + "\r\n\r\n" +
+        exportWrap.value = '<!-- HTML -->\r\n<div class="drunktext drunked">' + drunktext.innerHTML + '</div>' + "\r\n\r\n" +
           exportCSS();
         exportWrap.select();
       }
