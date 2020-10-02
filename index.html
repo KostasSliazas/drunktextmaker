@@ -79,18 +79,6 @@
       background: #fff;
     }
 
-    .drunktext i {
-      display: inline-block;
-      text-align: center;
-      letter-spacing: 2px;
-      font-synthesis: none;
-      font-style: normal;
-    }
-
-    .drunktext>i:empty {
-      width: 1ch;
-    }
-
     @keyframes colors {
       0% {
         background: #5cb6a2;
@@ -109,6 +97,21 @@
       to {
         transform: rotate(-10deg);
       }
+    }
+    .drunktext {
+      animation-duration: .5s;
+    }
+
+    .drunktext i {
+      display: inline-block;
+      text-align: center;
+      letter-spacing: 2px;
+      font-synthesis: none;
+      font-style: normal;
+    }
+
+    .drunktext>i:empty {
+      width: 1ch;
     }
 
     .drunked i {
@@ -374,7 +377,7 @@
 
       let leters = new ElementCreate("div");
       leters
-        .addClas("letters","dropsh")
+        .addClas("letters", "dropsh")
         .appTFra()
         .appElem();
       let cs;
