@@ -207,11 +207,15 @@
       columns: 2;
       font-size: 12px;
       background: #eee;
-      min-height: 100px;
+      min-height: 1em;
       position: absolute;
       bottom: 0;
       width: 100%;
       z-index: -1;
+    }
+
+    p {
+      margin: 0;
     }
 
     .close {
@@ -439,7 +443,7 @@
       }
 
       function exportCSS() {
-        return  '/*CSS*/\r\n' +
+        return '/*CSS*/\r\n' +
           '@keyframes rote{\r\n' +
           'from{\r\n' +
           'transform:rotate(10deg);\r\n' +
@@ -480,7 +484,8 @@
 
       function exportHtml() {
         exportWrap.style.display = "block";
-        exportWrap.value = '<!-- HTML -->\r\n<div class="drunktext drunked">' + drunktext.innerHTML + '</div>' + "\r\n\r\n" +
+        exportWrap.value = '<!-- HTML -->\r\n<div class="drunktext drunked">' + drunktext.innerHTML + '</div>' +
+          "\r\n\r\n" +
           exportCSS();
         exportWrap.select();
       }
