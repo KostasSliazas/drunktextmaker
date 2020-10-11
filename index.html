@@ -207,7 +207,6 @@
       columns: 2;
       font-size: 12px;
       background: #eee;
-      min-height: 1em;
       position: absolute;
       bottom: 0;
       width: 100%;
@@ -231,6 +230,7 @@
       border: 0;
       background: #aaa;
       box-shadow: 0 0 1px #aaa;
+      font-size: 0;
     }
 
     .close::before {
@@ -391,6 +391,7 @@
         for (let letter of abc) {
           if (letter !== ",") {
             cs = new ElementCreate("div");
+            if(letter === " ") cs.addClas("tab");
             cs.addText(letter).appTFra();
           }
         }
@@ -401,7 +402,7 @@
         cs = new ElementCreate("button");
         cs.addText("export").addClas("btn", "export").appTFra();
         cs = new ElementCreate("button");
-        cs.addClas("close").appTFra();
+        cs.addClas("close").addText("x").appTFra();
       }
       createKeys();
       let keyboard = document.getElementsByClassName("letters")[0];
@@ -422,7 +423,7 @@
           unlock(e);
           return;
         } else if (e.target.tagName === "DIV" && abc.toLowerCase().split('').indexOf(e.target.innerHTML
-            .toLowerCase()) >= 0) {
+            .toLowerCase()) >= 0 || e.target.className === "tab") {
           typing(e.target.innerHTML);
         } else if (e.target.classList.contains("close")) {
           keyboard.style.display = "none";
